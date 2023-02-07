@@ -1,4 +1,5 @@
-﻿using Framework.Domain;
+﻿using Framework.Core;
+using Framework.Domain;
 using OnlineQuizSystem.Domain.Exceptions;
 using OnlineQuizSystem.Domain.Repositories;
 
@@ -7,6 +8,11 @@ namespace OnlineQuizSystem.Domain;
 public class Employee : BaseEntity
 {
     private readonly IEmployeeRepository repository;
+
+    public Employee()
+    {
+
+    }
 
     public Employee(string firstName, 
         string lastName, 
