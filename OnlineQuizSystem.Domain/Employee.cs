@@ -22,6 +22,7 @@ public class Employee : BaseEntity
     {
         SetFirstName(firstName);
         SetLastName(lastName);
+        SetNationalCode(nationalCode);
         this.repository = repository;
     }
 
@@ -47,8 +48,8 @@ public class Employee : BaseEntity
     private void SetNationalCode(string nationalCode)
     {
         if (repository.NationalCodeIsExist(nationalCode))
-            //TODO: Create Exception
-            throw new Exception();
+            throw new EmployeeNationalCodeException();
+        NationalCode = nationalCode;
     }
 }
 

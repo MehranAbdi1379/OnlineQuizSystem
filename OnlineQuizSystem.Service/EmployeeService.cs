@@ -30,6 +30,7 @@ public class EmployeeService : IEmployeeService
             );
 
         repository.Create(employee);
+        repository.Save();
         return employee;
     }
 }
