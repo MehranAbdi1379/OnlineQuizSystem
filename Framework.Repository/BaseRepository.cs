@@ -5,18 +5,32 @@ namespace Framework.Repository;
 
 public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : BaseEntity
 {
+    private readonly BaseDbContext context;
+
+    public BaseRepository(BaseDbContext context)
+    {
+        this.context = context;
+    }
+
+    //TODO: Solve SaveChange Problem
+
     public void Create(TEntity entity)
     {
-        throw new NotImplementedException();
+        context.Add(entity);
     }
 
     public void Delete(TEntity entity)
     {
-        throw new NotImplementedException();
+        context.Remove(entity);
+    }
+
+    public void Save()
+    {
+        context.SaveChanges();
     }
 
     public void Update(TEntity entity)
     {
-        throw new NotImplementedException();
+        context.Update(entity);
     }
 }

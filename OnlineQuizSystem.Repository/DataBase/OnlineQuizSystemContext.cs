@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Framework.Repository;
+using Microsoft.EntityFrameworkCore;
 using OnlineQuizSystem.Domain;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace OnlineQuizSystem.Repository.DataBase;
 
-public class OnlineQuizSystemContext : DbContext
+public class OnlineQuizSystemContext : BaseDbContext
 {
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

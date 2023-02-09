@@ -12,5 +12,6 @@ namespace Framework.Core.Repository
         void Create(TEntity entity);
         void Update(TEntity entity);
         void Delete(TEntity entity);
+        void Save();
     }
 }
