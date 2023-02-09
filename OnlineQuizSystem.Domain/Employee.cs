@@ -7,8 +7,6 @@ namespace OnlineQuizSystem.Domain;
 
 public class Employee : BaseEntity
 {
-    private readonly IEmployeeRepository repository;
-
     public Employee()
     {
 
@@ -22,30 +20,29 @@ public class Employee : BaseEntity
     {
         SetFirstName(firstName);
         SetLastName(lastName);
-        SetNationalCode(nationalCode);
-        this.repository = repository;
+        SetNationalCode(nationalCode , repository);
     }
 
-    public string FirstName { get; set; }
-    public string LastName { get; set; }
-    public string NationalCode { get; set; }
-    public DateTime BirthDate { get; set; }
+    public string FirstName { get; private set; }
+    public string LastName { get;  private set; }
+    public string NationalCode { get;  private set; }
+    public DateTime BirthDate { get;   private set; }
 
-    private void SetFirstName(string firstName)
+    public void SetFirstName(string firstName)
     {
         if (string.IsNullOrWhiteSpace(firstName))
             throw new EmployeeFirstNameRequiredException();
         FirstName = firstName;
     }
 
-    private void SetLastName(string lastName)
+    public void SetLastName(string lastName)
     {
         if (string.IsNullOrWhiteSpace(lastName))
             throw new EmployeeFirstNameRequiredException();
         FirstName = lastName;
     }
 
-    private void SetNationalCode(string nationalCode)
+    public void SetNationalCode(string nationalCode, IEmployeeRepository repository)
     {
         if (repository.NationalCodeIsExist(nationalCode))
             throw new EmployeeNationalCodeException();

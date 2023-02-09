@@ -11,8 +11,12 @@ namespace OnlineQuizSystem.Repository;
 
 public class EmployeeRepository : BaseRepository<Employee>, IEmployeeRepository
 {
+    public EmployeeRepository(BaseDbContext context) : base(context)
+    {
+    }
+
     public bool NationalCodeIsExist(string nationalCode)
     {
-        throw new NotImplementedException();
+        return context.Set<Employee>().Any(e => e.NationalCode == nationalCode);
     }
 }

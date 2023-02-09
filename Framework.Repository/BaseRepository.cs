@@ -5,7 +5,7 @@ namespace Framework.Repository;
 
 public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : BaseEntity
 {
-    private readonly BaseDbContext context;
+    protected readonly BaseDbContext context;
 
     public BaseRepository(BaseDbContext context)
     {
