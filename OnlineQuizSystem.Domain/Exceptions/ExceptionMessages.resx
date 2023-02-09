@@ -123,4 +123,7 @@
   <data name="EmployeeLastNameRequiredException" xml:space="preserve">
     <value>LastName can not be null.</value>
   </data>
+  <data name="EmployeeNationalCodeException" xml:space="preserve">
+    <value>National Code Exists</value>
+  </data>
 </root>

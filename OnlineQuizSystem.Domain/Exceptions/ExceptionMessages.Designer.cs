@@ -77,5 +77,14 @@ namespace OnlineQuizSystem.Domain.Exceptions {
                 return ResourceManager.GetString("EmployeeLastNameRequiredException", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to National Code Exists.
+        /// </summary>
+        public static string EmployeeNationalCodeException {
+            get {
+                return ResourceManager.GetString("EmployeeNationalCodeException", resourceCulture);
+            }
+        }
     }
 }
